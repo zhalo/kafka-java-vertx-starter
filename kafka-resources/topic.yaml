@@ -1,0 +1,14 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaTopic
+metadata:
+  labels:
+    eventstreams.ibm.com/cluster: TARGET_CLUSTER_NAME
+  name: testtopic
+  namespace: TARGET_NAMESPACE
+  spec:
+  config:
+    min.insync.replicas: '2'
+    retention.ms: '604800000'
+  partitions: 1
+  replicas: 3
+  topicName: testtopic
